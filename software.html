@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#08080c">
+    <title>Software | HYCRIX ENTERTAINMENT</title>
+    <link rel="stylesheet" href="css/software.css">
+    <script src="js/software.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+    <a href="index.html" class="site-logo" aria-label="Hycrix Entertainment Home">
+        <img src="assets/images/logo.png" alt="Hycrix Entertainment">
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+
+        <div class="dropdown">
+            <button class="dropbtn" type="button">
+                Minecraft <span class="arrow"></span>
+            </button>
+            <div class="dropdown-menu">
+                <a href="VorionMods.html">Vorion Mods</a>
+            </div>
+        </div>
+
+        <a href="software.html" class="active">Software</a>
+        <a href="updates.html">Updates</a>
+        <a href="about.html">About</a>
+    </nav>
+</header>
+
+<main>
+    <section class="software-hero">
+        <p class="eyebrow">HYCRIX ENTERTAINMENT / SOFTWARE</p>
+        <h1>SOFTWARE<br><span>BUILT DIFFERENT.</span></h1>
+        <p class="hero-description">
+            Applications and tools designed for creators,
+            gamers and everyday workflows.
+        </p>
+        <div class="hero-label"><span></span> OUR APPLICATIONS & TOOLS</div>
+    </section>
+
+    <section class="software-section" id="apps">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">APPLICATIONS</p>
+                <h2>APP<span class="title-dot">.</span></h2>
+            </div>
+            <span class="section-number">01</span>
+        </div>
+
+        <div class="software-grid">
+            <button class="software-card" type="button" data-software="mpx">
+                <span class="card-top">
+                    <span class="card-icon mpx-icon">MPX</span>
+                    <span class="card-type">APPLICATION <span>↗</span></span>
+                </span>
+                <span class="card-content">
+                    <span class="card-title">Hycrix MPX</span>
+                    <span class="card-description">
+                        A multimedia project focused on video and music downloading.
+                    </span>
+                </span>
+                <span class="card-bottom">
+                    <span class="platform">WINDOWS</span>
+                    <span class="card-link">Explore software <span>↗</span></span>
+                </span>
+            </button>
+
+            <button class="software-card" type="button" data-software="rclone">
+                <span class="card-top">
+                    <span class="card-icon rclone-icon">RCL</span>
+                    <span class="card-type">APPLICATION <span>↗</span></span>
+                </span>
+                <span class="card-content">
+                    <span class="card-title">Rclone Explorer</span>
+                    <span class="card-description">
+                        A graphical file management project powered by Rclone.
+                    </span>
+                </span>
+                <span class="card-bottom">
+                    <span class="platform">ANDROID</span>
+                    <span class="card-link">Explore software <span>↗</span></span>
+                </span>
+            </button>
+        </div>
+    </section>
+
+    <section class="software-section tools-section" id="tools">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">UTILITIES</p>
+                <h2>TOOLS<span class="title-dot">.</span></h2>
+            </div>
+            <span class="section-number">02</span>
+        </div>
+
+        <div class="software-grid">
+            <button class="software-card" type="button" data-software="obs">
+                <span class="card-top">
+                    <span class="card-icon obs-icon">OBS</span>
+                    <span class="card-type">UTILITY <span>↗</span></span>
+                </span>
+                <span class="card-content">
+                    <span class="card-title">OBS Record Timer</span>
+                    <span class="card-description">
+                        A lightweight timer utility designed for OBS Studio recording workflows.
+                    </span>
+                </span>
+                <span class="card-bottom">
+                    <span class="platform">WINDOWS</span>
+                    <span class="card-link">Explore tool <span>↗</span></span>
+                </span>
+            </button>
+        </div>
+    </section>
+
+    <section class="software-bottom">
+        <div class="bottom-line"></div>
+        <p class="eyebrow">HYCRIX SOFTWARE</p>
+        <h2>BUILT FOR<br><span>CREATORS.</span></h2>
+        <p>More applications and tools will be introduced over time.</p>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <span>© 2026 HYCRIX ENTERTAINMENT</span>
+    <span>SOFTWARE & TOOLS</span>
+</footer>
+
+<!-- SOFTWARE DETAIL POPUP -->
+<div class="software-modal" id="softwareModal"
+     role="dialog" aria-modal="true"
+     aria-hidden="true" aria-labelledby="modalTitle">
+
+    <button class="modal-backdrop" type="button"
+            data-close-modal aria-label="Close popup"></button>
+
+    <div class="modal-panel">
+        <button class="modal-close" type="button"
+                data-close-modal aria-label="Close popup">×</button>
+
+        <p class="eyebrow" id="modalCategory">SOFTWARE DETAILS</p>
+        <div class="modal-icon" id="modalIcon">APP</div>
+        <h2 id="modalTitle">Software name</h2>
+        <p class="modal-description" id="modalDescription"></p>
+
+        <div class="modal-divider"></div>
+
+        <div class="modal-info">
+            <div>
+                <span class="meta-label">TYPE</span>
+                <span id="modalType"></span>
+            </div>
+            <div>
+                <span class="meta-label">PLATFORM</span>
+                <span id="modalPlatform"></span>
+            </div>
+            <div>
+                <span class="meta-label">STATUS</span>
+                <span id="modalStatus"></span>
+            </div>
+        </div>
+
+        <p class="modal-note" id="modalNote">
+            Release information will be provided when available.
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
