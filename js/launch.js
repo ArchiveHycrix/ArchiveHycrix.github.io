@@ -4,7 +4,7 @@
  * @param {Date} launchDate Ngày giờ mở website
  */
 
-const launchDate = new Date("2026-12-01T00:00:00+07:00").getTime();
+const launchDate = new Date("2026-10-16T18:00:00+07:00").getTime();
 
 function updateCountdown() {
     const now = Date.now();
