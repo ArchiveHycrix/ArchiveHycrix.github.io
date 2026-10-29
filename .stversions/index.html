@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hycrix Entertainment</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Background effects -->
+    <div class="background">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="noise"></div>
+    </div>
+
+    <!-- Navigation -->
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        <img
+            src="assets/images/logo.png"
+            alt="Hycrix Entertainment">
+    </a>
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <!-- Minecraft: dropdown only, not a page -->
+        <div class="dropdown">
+
+            <button
+                type="button"
+                class="dropbtn"
+                aria-label="Minecraft menu">
+
+                Minecraft
+                <span class="arrow"></span>
+
+            </button>
+
+            <div class="dropdown-menu">
+
+                <a href="VorionMods.html">
+                    Vorion Mods
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Software -->
+        <a href="software.html">
+            Software
+        </a>
+
+
+        <!-- Updates -->
+        <a href="updates.html">
+            Updates
+        </a>
+
+
+        <!-- About -->
+        <a href="about.html">
+            About
+        </a>
+
+    </nav>
+
+</header>
+    <!-- Hero -->
+    <main>
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+                <p class="eyebrow">WELCOME TO</p>
+
+                <h1>
+                    HYCRIX
+                    <span>ENTERTAINMENT</span>
+                </h1>
+
+                <p class="description">
+                    Gaming • Creativity • Entertainment
+                </p>
+
+                <div class="buttons">
+                    <a href="#projects" class="button primary">
+                        Explore Projects
+                    </a>
+
+                    <a href="#about" class="button secondary">
+                        About Us
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+        
+<!-- PROJECTS -->
+<section id="projects" class="section projects-section">
+
+    <p class="eyebrow">SELECTED WORKS · 2026</p>
+    <h2>Projects<span class="title-dot">.</span></h2>
+
+    <div class="project-grid">
+
+        <button class="project-card" data-project="rclone">
+            <span class="project-number">01</span>
+            <span class="project-name">Rclone Explorer</span>
+            <span class="project-arrow">↗</span>
+        </button>
+
+        <button class="project-card" data-project="dungeons">
+            <span class="project-number">02</span>
+            <span class="project-name">DungeonsIISodium</span>
+            <span class="project-arrow">↗</span>
+        </button>
+
+        <button class="project-card" data-project="crafting">
+            <span class="project-number">03</span>
+            <span class="project-name">Crafting Puzzle: Ultimate Progression</span>
+            <span class="project-arrow">↗</span>
+        </button>
+
+        <button class="project-card" data-project="willowbrook">
+            <span class="project-number">04</span>
+            <span class="project-name">Echoes Beyond Willowbrook</span>
+            <span class="project-arrow">↗</span>
+        </button>
+
+        <button class="project-card" data-project="mpx">
+            <span class="project-number">05</span>
+            <span class="project-name">Hycrix MPX</span>
+            <span class="project-arrow">↗</span>
+        </button>
+
+        <button class="project-card" data-project="lockin">
+            <span class="project-number">06</span>
+            <span class="project-name">Lock In The Puzzle: Unbound</span>
+            <span class="project-arrow">↗</span>
+        </button>
+
+    </div>
+
+    <p class="projects-hint">SELECT A PROJECT TO EXPLORE</p>
+
+</section>
+
+
+<!-- PROJECT POPUP -->
+<div class="project-modal" id="projectModal"
+     role="dialog" aria-modal="true"
+     aria-labelledby="modalTitle"
+     aria-hidden="true">
+
+    <div class="project-modal-backdrop" data-close-modal></div>
+
+    <div class="project-modal-panel">
+
+        <button class="modal-close" data-close-modal
+                aria-label="Close popup">×</button>
+
+        <p class="modal-eyebrow" id="modalCategory">PROJECT DETAILS</p>
+
+        <h3 id="modalTitle">Project name</h3>
+
+        <p class="modal-description" id="modalDescription"></p>
+
+        <div class="modal-divider"></div>
+
+        <div class="modal-meta">
+            <div>
+                <span class="meta-label">TYPE</span>
+                <span id="modalType"></span>
+            </div>
+
+            <div>
+                <span class="meta-label">PLATFORM / ENGINE</span>
+                <span id="modalPlatform"></span>
+            </div>
+
+            <div>
+                <span class="meta-label">STATUS</span>
+                <span id="modalStatus">In Development</span>
+            </div>
+        </div>
+
+        <span class="modal-index" id="modalIndex">PROJECT 01</span>
+
+    </div>
+
+</div>
+
+
+        <!-- About -->
+        <section id="about" class="section about">
+            <p class="eyebrow">WHO WE ARE</p>
+            <h2>Hycrix Entertainment</h2>
+
+            <p>
+                A creative entertainment brand focused on gaming,
+                content and digital projects.
+            </p>
+        </section>
+    </main>
+    
+<!-- HYCRIX CONTACT & SOCIALS -->
+<section class="contact-section" id="contact">
+
+    <p class="eyebrow">CONNECT WITH HYCRIX</p>
+
+    <h2>FIND US <span>ONLINE.</span></h2>
+
+    <div class="contact-grid">
+
+        <!-- MAIN CHANNEL -->
+        <a
+            class="contact-card"
+            href="https://youtube.com/@hycrixmc?si=md29jcOqGBr6cChn"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <span class="contact-icon youtube-icon">YT</span>
+            <span class="contact-label">MAIN CHANNEL</span>
+            <span class="contact-name">HYCRIXMC</span>
+            <span class="contact-action">Visit YouTube ↗</span>
+        </a>
+
+        <!-- MUSIC CHANNEL -->
+        <a
+            class="contact-card"
+            href="https://youtube.com/@hycrixentertainment?si=o8HbzakKLF0EpZo1"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <span class="contact-icon youtube-icon">YT</span>
+            <span class="contact-label">MUSIC CHANNEL</span>
+            <span class="contact-name">HYCRIX MUSICZ</span>
+            <span class="contact-action">Visit YouTube ↗</span>
+        </a>
+
+        <!-- ROBLOX CHANNEL -->
+        <a
+            class="contact-card"
+            href="https://youtube.com/@hycrixrbx?si=RKSZ7j05aLNaNm3u"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <span class="contact-icon youtube-icon">YT</span>
+            <span class="contact-label">ROBLOX CHANNEL</span>
+            <span class="contact-name">HYCRIX RBX</span>
+            <span class="contact-action">Visit YouTube ↗</span>
+        </a>
+
+        <!-- DISCORD -->
+        <a
+            class="contact-card"
+            href="https://discord.gg/eWwKj66mj"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <span class="contact-icon discord-icon">DC</span>
+            <span class="contact-label">COMMUNITY</span>
+            <span class="contact-name">Discord</span>
+            <span class="contact-action">Join Server ↗</span>
+        </a>
+
+        <!-- SUPPORT EMAIL -->
+        <a
+            class="contact-card"
+            href="mailto:hycrixmc@hotmail.com"
+        >
+            <span class="contact-icon email-icon">@</span>
+            <span class="contact-label">SUPPORT EMAIL</span>
+            <span class="contact-name">HYCRIX Support</span>
+            <span class="contact-address">hycrixmc@hotmail.com</span>
+            <span class="contact-action">Send an Email ↗</span>
+        </a>
+
+        <!-- GENERAL EMAIL -->
+        <a
+            class="contact-card"
+            href="mailto:voxtex74@outlook.com"
+        >
+            <span class="contact-icon email-icon">@</span>
+            <span class="contact-label">GENERAL CONTACT</span>
+            <span class="contact-name">HYCRIX Contact</span>
+            <span class="contact-address">voxtex74@outlook.com</span>
+            <span class="contact-action">Send an Email ↗</span>
+        </a>
+
+    </div>
+
+</section>
+
+
+    <footer>
+        © 2026 Hycrix Entertainment
+        
+<p class="web-version">
+    Web v0.1.0 <span>•</span> Build 26.100
+</p>
+
+    </footer>
+    <script src="js/config.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/projects.js"></script>
+</body>
+</html>
+

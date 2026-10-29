@@ -1,48 +1,35 @@
 
 /**
  * HYCRIX ENTERTAINMENT - Launch Countdown
+ * @param {Date} launchDate Ngày giờ mở website
  */
 
-(() => {
-    const launchDate = new Date("2026-10-16T18:00:00+07:00").getTime();
+const launchDate = new Date("2026-12-01T00:00:00+07:00").getTime();
 
-    /**
-     * @param {string} id
-     * @returns {HTMLElement | null}
-     */
-    function getElement(id) {
-        return document.getElementById(id);
+function updateCountdown() {
+    const now = Date.now();
+    const distance = launchDate - now;
+
+    if (distance <= 0) {
+        document.body.classList.remove("coming-soon");
+        document.getElementById("comingSoon").hidden = true;
+        document.getElementById("mainWebsite").hidden = false;
+        clearInterval(countdownTimer);
+        return;
     }
 
-    function updateCountdown() {
-        const comingSoon = getElement("comingSoon");
-        const mainWebsite = getElement("mainWebsite");
-        const daysEl = getElement("days");
-        const hoursEl = getElement("hours");
-        const minutesEl = getElement("minutes");
-        const secondsEl = getElement("seconds");
+    document.getElementById("days").textContent =
+        Math.floor(distance / 86400000);
 
-        if (!comingSoon || !mainWebsite ||
-            !daysEl || !hoursEl || !minutesEl || !secondsEl) {
-            console.error("Countdown: Missing required HTML element.");
-            return;
-        }
+    document.getElementById("hours").textContent =
+        Math.floor((distance % 86400000) / 3600000);
 
-        const distance = launchDate - Date.now();
+    document.getElementById("minutes").textContent =
+        Math.floor((distance % 3600000) / 60000);
 
-        if (distance <= 0) {
-            comingSoon.hidden = true;
-            mainWebsite.hidden = false;
-            document.body.classList.remove("coming-soon");
-            return;
-        }
+    document.getElementById("seconds").textContent =
+        Math.floor((distance % 60000) / 1000);
+}
 
-        daysEl.textContent = Math.floor(distance / 86400000);
-        hoursEl.textContent = Math.floor((distance % 86400000) / 3600000);
-        minutesEl.textContent = Math.floor((distance % 3600000) / 60000);
-        secondsEl.textContent = Math.floor((distance % 60000) / 1000);
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-})();
+const countdownTimer = setInterval(updateCountdown, 1000);
+updateCountdown();

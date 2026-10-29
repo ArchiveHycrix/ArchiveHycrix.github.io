@@ -1,0 +1,1489 @@
+/* HYCRIX: THE HOLLOW — Halloween 2026 */
+
+body.hollow-active {
+    --hollow-bg: #0b0912;
+    --hollow-panel: #171020;
+    --hollow-purple: #9b5cff;
+    --hollow-text: #eee7fa;
+    --hollow-border: rgba(155, 92, 255, 0.35);
+
+    background-color: var(--hollow-bg);
+    color: var(--hollow-text);
+}
+
+body.hollow-active header,
+body.hollow-active nav,
+body.hollow-active .navbar {
+    background-color: #100b1b;
+    border-color: var(--hollow-border);
+}
+
+body.hollow-active h1,
+body.hollow-active h2,
+body.hollow-active h3 {
+    color: #c59aff;
+}
+
+body.hollow-active a {
+    color: #c59aff;
+}
+
+body.hollow-active button,
+body.hollow-active .btn {
+    border-color: var(--hollow-purple);
+}
+
+body.hollow-active .card,
+body.hollow-active .project-card,
+body.hollow-active section {
+    border-color: var(--hollow-border);
+}
+
+body.hollow-active footer {
+    background-color: #09070e;
+    border-top: 1px solid var(--hollow-border);
+}
+
+body.hollow-active a,
+body.hollow-active button {
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    body.hollow-active h1 {
+        text-shadow: 0 0 18px rgba(155, 92, 255, 0.25);
+    }
+}
+
+/* ==========================================
+   HYCRIX: THE HOLLOW — DARK FANTASY UPGRADE
+   ========================================== */
+
+body.hollow-active {
+    --hollow-purple: #a855f7;
+    --hollow-bright: #d8b4fe;
+    --hollow-deep: #090610;
+    --hollow-line: rgba(168, 85, 247, 0.38);
+
+    background:
+        radial-gradient(ellipse at 50% 0%,
+            rgba(91, 33, 182, 0.23), transparent 48%),
+        linear-gradient(180deg, #0b0713, #10091b 55%, #08060d);
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+/* Purple mist and ambient magical light */
+body.hollow-active::before {
+    content: "";
+    position: fixed;
+    inset: -20%;
+    z-index: 0;
+    pointer-events: none;
+
+    background:
+        radial-gradient(ellipse at 15% 35%,
+            rgba(126, 34, 206, 0.13), transparent 38%),
+        radial-gradient(ellipse at 85% 65%,
+            rgba(147, 51, 234, 0.12), transparent 40%),
+        radial-gradient(ellipse at 50% 100%,
+            rgba(88, 28, 135, 0.16), transparent 45%);
+
+    animation: hollow-mist 18s ease-in-out infinite alternate;
+}
+
+/* Keep page content above the ambient background */
+body.hollow-active > *:not(.background) {
+    position: relative;
+    z-index: 1;
+}
+
+body.hollow-active .background {
+    pointer-events: none;
+}
+
+/* Navigation: gothic glass */
+body.hollow-active .navbar {
+    background: rgba(11, 7, 19, 0.88);
+    border-bottom: 1px solid var(--hollow-line);
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+body.hollow-active .navbar a {
+    transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+body.hollow-active .navbar a:hover,
+body.hollow-active .navbar a:focus-visible {
+    color: var(--hollow-bright);
+    text-shadow: 0 0 14px rgba(168, 85, 247, 0.7);
+}
+
+/* Hero: portal-like aura */
+body.hollow-active .hero {
+    position: relative;
+    isolation: isolate;
+}
+
+body.hollow-active .hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: min(72vw, 620px);
+    aspect-ratio: 1;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    pointer-events: none;
+
+    background: radial-gradient(circle,
+        rgba(126, 34, 206, 0.18) 0%,
+        rgba(88, 28, 135, 0.10) 35%,
+        transparent 70%);
+
+    filter: blur(12px);
+    animation: hollow-pulse 5s ease-in-out infinite;
+}
+
+body.hollow-active .hero h1 {
+    color: #f3e8ff;
+    text-shadow:
+        0 0 12px rgba(168, 85, 247, 0.5),
+        0 0 38px rgba(126, 34, 206, 0.25);
+}
+
+body.hollow-active .hero h1 span {
+    color: var(--hollow-bright);
+}
+
+/* Magical section headings */
+body.hollow-active .section h2,
+body.hollow-active .contact-section h2 {
+    text-shadow: 0 0 22px rgba(168, 85, 247, 0.22);
+}
+
+body.hollow-active .eyebrow {
+    color: #c084fc;
+    letter-spacing: 0.2em;
+}
+
+/* Project cards: enchanted borders */
+body.hollow-active .project-card {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        linear-gradient(145deg,
+            rgba(37, 20, 54, 0.92),
+            rgba(13, 9, 21, 0.96));
+    border: 1px solid rgba(168, 85, 247, 0.28);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.025);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+body.hollow-active .project-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background: linear-gradient(
+        115deg,
+        transparent 20%,
+        rgba(192, 132, 252, 0.10) 50%,
+        transparent 80%
+    );
+
+    transform: translateX(-100%);
+    transition: transform 0.55s ease;
+}
+
+body.hollow-active .project-card:hover,
+body.hollow-active .project-card:focus-visible {
+    transform: translateY(-5px);
+    border-color: rgba(192, 132, 252, 0.85);
+    box-shadow:
+        0 12px 32px rgba(0, 0, 0, 0.3),
+        0 0 22px rgba(147, 51, 234, 0.16);
+}
+
+body.hollow-active .project-card:hover::before,
+body.hollow-active .project-card:focus-visible::before {
+    transform: translateX(100%);
+}
+
+body.hollow-active .project-number,
+body.hollow-active .project-arrow {
+    color: #c084fc;
+}
+
+/* Buttons: Hollow energy */
+body.hollow-active .button.primary,
+body.hollow-active .btn-primary {
+    background: linear-gradient(135deg, #7e22ce, #a855f7);
+    border: 1px solid #c084fc;
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.2);
+}
+
+body.hollow-active .button.primary:hover,
+body.hollow-active .btn-primary:hover {
+    box-shadow:
+        0 0 12px rgba(192, 132, 252, 0.4),
+        0 0 32px rgba(147, 51, 234, 0.22);
+}
+
+/* Contact cards */
+body.hollow-active .contact-card {
+    border-color: rgba(168, 85, 247, 0.25);
+    background:
+        linear-gradient(145deg,
+            rgba(29, 17, 43, 0.92),
+            rgba(12, 8, 19, 0.96));
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+body.hollow-active .contact-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(192, 132, 252, 0.75);
+    box-shadow: 0 0 24px rgba(147, 51, 234, 0.13);
+}
+
+/* Project details modal */
+body.hollow-active .project-modal-panel {
+    background: #120b1d;
+    border: 1px solid var(--hollow-line);
+    box-shadow: 0 0 50px rgba(88, 28, 135, 0.22);
+}
+
+body.hollow-active .modal-divider {
+    background: var(--hollow-line);
+}
+
+/* Footer */
+body.hollow-active footer {
+    border-top: 1px solid var(--hollow-line);
+    box-shadow: 0 -8px 32px rgba(88, 28, 135, 0.07);
+}
+
+/* Ambient motion */
+@keyframes hollow-mist {
+    from {
+        transform: translate3d(-2%, 0, 0) scale(1);
+    }
+    to {
+        transform: translate3d(2%, -1%, 0) scale(1.06);
+    }
+}
+
+@keyframes hollow-pulse {
+    0%, 100% {
+        opacity: 0.55;
+        scale: 0.96;
+    }
+    50% {
+        opacity: 1;
+        scale: 1.04;
+    }
+}
+
+/* Accessibility and mobile performance */
+@media (max-width: 600px) {
+    body.hollow-active::before {
+        animation-duration: 28s;
+    }
+
+    body.hollow-active .project-card:hover,
+    body.hollow-active .contact-card:hover {
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.hollow-active::before,
+    body.hollow-active .hero::before {
+        animation: none;
+    }
+
+    body.hollow-active *,
+    body.hollow-active *::before,
+    body.hollow-active *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ======================================
+   THE HOLLOW — EVENT LANDING EXPERIENCE
+   ====================================== */
+
+.hollow-event-banner {
+    display: none;
+}
+
+body.hollow-active .hollow-event-banner {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: clamp(540px, 78vh, 820px);
+    padding: 76px 22px 88px;
+    margin: 0;
+    overflow: hidden;
+    isolation: isolate;
+    text-align: center;
+    color: #f5eaff;
+    background:
+        radial-gradient(ellipse at 50% 75%,
+            rgba(117, 35, 201, .27), transparent 42%),
+        linear-gradient(180deg, #08050f 0%, #150922 54%,
+            #090610 100%);
+    border-bottom: 1px solid rgba(184, 117, 255, .45);
+}
+
+/* Moon */
+body.hollow-active .hollow-moon {
+    position: absolute;
+    z-index: -2;
+    width: clamp(125px, 20vw, 230px);
+    aspect-ratio: 1;
+    top: 7%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 35% 35%,
+            #f2e7ff 0%, #d5b1ff 28%,
+            #8950c9 62%, #35104f 100%);
+    box-shadow:
+        0 0 35px rgba(173, 106, 255, .38),
+        0 0 110px rgba(128, 55, 210, .28);
+    opacity: .8;
+}
+
+/* Distant gothic towers */
+body.hollow-active .hollow-ruins {
+    position: absolute;
+    z-index: -1;
+    inset: auto 0 0;
+    height: 52%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    overflow: hidden;
+    pointer-events: none;
+    color: #08050e;
+    opacity: .96;
+}
+
+body.hollow-active .hollow-ruins span {
+    display: grid;
+    place-items: center;
+    width: clamp(42px, 9vw, 120px);
+    height: 90%;
+    margin-bottom: -12px;
+    background: linear-gradient(90deg, #090510, #20112d, #08050e);
+    clip-path: polygon(
+        35% 18%, 50% 0, 65% 18%, 65% 27%,
+        100% 27%, 100% 100%, 0 100%, 0 27%, 35% 27%
+    );
+    font-size: 0;
+}
+
+body.hollow-active .hollow-ruins span:nth-child(even) {
+    height: 65%;
+}
+
+body.hollow-active .hollow-ruins span:nth-child(3) {
+    height: 100%;
+    width: clamp(60px, 12vw, 150px);
+}
+
+/* Magical portal */
+body.hollow-active .hollow-portal-scene {
+    position: absolute;
+    z-index: -1;
+    width: min(75vw, 520px);
+    height: min(75vw, 520px);
+    max-height: 65%;
+    top: 14%;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    opacity: .68;
+}
+
+body.hollow-active .hollow-portal-outer {
+    position: absolute;
+    inset: 0 12% 0;
+    border: 3px solid #8f43d9;
+    border-radius: 50% 50% 8% 8% / 38% 38% 8% 8%;
+    background: rgba(80, 24, 132, .10);
+    box-shadow:
+        0 0 12px #9e4dff,
+        inset 0 0 24px rgba(181, 117, 255, .4),
+        0 0 70px rgba(139, 55, 255, .48);
+    animation: hollow-gate-pulse 4s ease-in-out infinite;
+}
+
+body.hollow-active .hollow-portal-inner {
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(220, 185, 255, .85);
+    border-radius: inherit;
+    background:
+        repeating-radial-gradient(
+            ellipse at 50% 55%,
+            rgba(196, 132, 252, .18) 0 2px,
+            transparent 3px 13px
+        ),
+        radial-gradient(ellipse at 50% 60%,
+            #8c36df 0%, #441477 36%,
+            #160822 72%, #08040e 100%);
+    overflow: hidden;
+}
+
+body.hollow-active .hollow-portal-core {
+    position: absolute;
+    inset: 15%;
+    border-radius: 50%;
+    background:
+        radial-gradient(ellipse,
+            rgba(230, 203, 255, .85),
+            rgba(164, 75, 255, .25) 24%,
+            transparent 68%);
+    filter: blur(12px);
+    animation: hollow-core-breathe 3s ease-in-out infinite alternate;
+}
+
+body.hollow-active .hollow-ground-light {
+    position: absolute;
+    bottom: 0;
+    left: -20%;
+    width: 140%;
+    height: 22%;
+    background: radial-gradient(ellipse,
+        rgba(177, 93, 255, .48), transparent 68%);
+    filter: blur(12px);
+}
+
+/* Event text */
+body.hollow-active .hollow-event-content {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 720px);
+    margin-top: 100px;
+}
+
+body.hollow-active .hollow-kicker {
+    color: #d6b5ff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .34em;
+}
+
+body.hollow-active #hollow-title {
+    margin: 18px 0;
+    color: #fff;
+    font-size: clamp(42px, 9vw, 94px);
+    line-height: .95;
+    letter-spacing: .045em;
+    font-family: Georgia, "Times New Roman", serif;
+    text-shadow:
+        0 0 12px rgba(191, 135, 255, .75),
+        0 0 42px rgba(142, 53, 255, .55);
+}
+
+body.hollow-active #hollow-title span {
+    display: block;
+    margin-top: 13px;
+    color: #c18bff;
+    font-size: .48em;
+    letter-spacing: .2em;
+}
+
+body.hollow-active .hollow-divider {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: min(290px, 80%);
+    margin: 25px auto;
+    color: #d7b5ff;
+}
+
+body.hollow-active .hollow-divider::before,
+body.hollow-active .hollow-divider::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(90deg, transparent, #a855f7);
+}
+
+body.hollow-active .hollow-divider::after {
+    transform: rotate(180deg);
+}
+
+body.hollow-active .hollow-divider span {
+    text-shadow: 0 0 16px #bd82ff;
+}
+
+body.hollow-active .hollow-description {
+    font-size: clamp(12px, 2vw, 16px);
+    font-weight: 800;
+    letter-spacing: .28em;
+    color: #e9d5ff;
+}
+
+body.hollow-active .hollow-subtitle {
+    max-width: 430px;
+    margin: 16px auto 25px;
+    color: #c8b8d8;
+    line-height: 1.8;
+}
+
+/* Portal entrance button */
+body.hollow-active .hollow-enter-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    min-height: 50px;
+    padding: 0 24px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .14em;
+    border: 1px solid #c18bff;
+    background: linear-gradient(135deg,
+        rgba(93, 32, 151, .92),
+        rgba(38, 13, 62, .94));
+    box-shadow:
+        inset 0 0 18px rgba(183, 119, 255, .13),
+        0 0 24px rgba(145, 62, 235, .25);
+    transition: background .25s, box-shadow .25s, transform .25s;
+}
+
+body.hollow-active .hollow-enter-button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #8b35d4, #35104f);
+    box-shadow: 0 0 34px rgba(174, 103, 255, .45);
+}
+
+body.hollow-active .hollow-event-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 28px;
+    color: #bba5d0;
+    font-size: 10px;
+    letter-spacing: .16em;
+}
+
+body.hollow-active .hollow-status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #bd83ff;
+    box-shadow: 0 0 12px #a855f7;
+}
+
+body.hollow-active .hollow-bottom-label {
+    position: absolute;
+    bottom: 22px;
+    left: 0;
+    right: 0;
+    color: rgba(211, 183, 244, .62);
+    font-size: 10px;
+    letter-spacing: .25em;
+}
+
+/* Floating magical particles */
+body.hollow-active .hollow-particles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+body.hollow-active .hollow-particles i {
+    position: absolute;
+    bottom: -12px;
+    left: calc(var(--particle-x, 10) * 1%);
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #dfbdff;
+    box-shadow: 0 0 12px 3px rgba(173, 91, 255, .55);
+    animation: hollow-particle-rise 8s linear infinite;
+}
+
+body.hollow-active .hollow-particles i:nth-child(1) { left: 8%; animation-delay: -2s; }
+body.hollow-active .hollow-particles i:nth-child(2) { left: 19%; animation-delay: -6s; }
+body.hollow-active .hollow-particles i:nth-child(3) { left: 31%; animation-delay: -4s; }
+body.hollow-active .hollow-particles i:nth-child(4) { left: 43%; animation-delay: -7s; }
+body.hollow-active .hollow-particles i:nth-child(5) { left: 56%; animation-delay: -1s; }
+body.hollow-active .hollow-particles i:nth-child(6) { left: 68%; animation-delay: -5s; }
+body.hollow-active .hollow-particles i:nth-child(7) { left: 79%; animation-delay: -3s; }
+body.hollow-active .hollow-particles i:nth-child(8) { left: 91%; animation-delay: -8s; }
+body.hollow-active .hollow-particles i:nth-child(9) { left: 25%; animation-delay: -1s; }
+body.hollow-active .hollow-particles i:nth-child(10) { left: 74%; animation-delay: -6s; }
+
+@keyframes hollow-gate-pulse {
+    0%, 100% { filter: brightness(.85); }
+    50% { filter: brightness(1.3); }
+}
+
+@keyframes hollow-core-breathe {
+    from { transform: scale(.85); opacity: .55; }
+    to { transform: scale(1.1); opacity: 1; }
+}
+
+@keyframes hollow-particle-rise {
+    0% { transform: translateY(0) scale(.5); opacity: 0; }
+    15% { opacity: .9; }
+    85% { opacity: .6; }
+    100% { transform: translateY(-650px) scale(1.3); opacity: 0; }
+}
+
+@media (max-width: 600px) {
+    body.hollow-active .hollow-event-banner {
+        min-height: 600px;
+        padding-inline: 18px;
+    }
+
+    body.hollow-active .hollow-event-content {
+        margin-top: 115px;
+    }
+
+    body.hollow-active .hollow-portal-scene {
+        width: 95vw;
+        height: 95vw;
+        top: 12%;
+    }
+
+    body.hollow-active .hollow-kicker {
+        font-size: 9px;
+        letter-spacing: .22em;
+    }
+
+    body.hollow-active .hollow-bottom-label {
+        font-size: 9px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.hollow-active .hollow-portal-outer,
+    body.hollow-active .hollow-portal-core,
+    body.hollow-active .hollow-particles i {
+        animation: none;
+    }
+}
+
+/* =========================================
+   HYCRIX: THE HOLLOW — FULL HOME EXPERIENCE
+   ========================================= */
+
+body.hollow-active {
+    background:
+        radial-gradient(ellipse at 50% 20%,
+            rgba(83, 24, 137, 0.30), transparent 48%),
+        radial-gradient(ellipse at 15% 80%,
+            rgba(44, 17, 82, 0.35), transparent 45%),
+        linear-gradient(180deg,
+            #080510 0%,
+            #10091c 35%,
+            #090611 70%,
+            #050309 100%) !important;
+    background-attachment: fixed !important;
+    color: #eee7ff;
+    position: relative;
+    isolation: isolate;
+}
+
+/* Ánh trăng và quầng sáng phủ toàn trang */
+body.hollow-active::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 82% 12%,
+            rgba(205, 177, 255, 0.15) 0 2%,
+            rgba(141, 70, 220, 0.08) 3%,
+            transparent 17%),
+        radial-gradient(ellipse at 50% 45%,
+            transparent 20%,
+            rgba(0, 0, 0, 0.18) 72%,
+            rgba(0, 0, 0, 0.60) 100%);
+    animation: hollow-atmosphere 8s ease-in-out infinite alternate;
+}
+
+/* Lớp sương mù toàn trang */
+body.hollow-active::after {
+    content: "";
+    position: fixed;
+    inset: -20%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.35;
+    background:
+        radial-gradient(ellipse at 20% 70%,
+            rgba(104, 46, 164, 0.16), transparent 35%),
+        radial-gradient(ellipse at 75% 45%,
+            rgba(72, 35, 120, 0.17), transparent 40%);
+    filter: blur(35px);
+    animation: hollow-fog-drift 18s ease-in-out infinite alternate;
+}
+
+/* Giữ các phần tử trên nền hiệu ứng */
+body.hollow-active > *:not(.background) {
+    position: relative;
+    z-index: 1;
+}
+
+/* Navbar ma thuật */
+body.hollow-active .navbar {
+    background: rgba(8, 5, 17, 0.78);
+    border-bottom: 1px solid rgba(183, 123, 255, 0.25);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.24);
+    backdrop-filter: blur(14px);
+}
+
+/* Hero là trung tâm của sự kiện */
+body.hollow-active .hero {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 50% 55%,
+            rgba(104, 42, 164, 0.20), transparent 55%);
+}
+
+/* Quầng cổng ma thuật sau nội dung Hero */
+body.hollow-active .hero::before {
+    content: "";
+    position: absolute;
+    width: min(62vw, 520px);
+    aspect-ratio: 1;
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid rgba(190, 130, 255, 0.18);
+    box-shadow:
+        0 0 25px rgba(143, 63, 220, 0.16),
+        inset 0 0 35px rgba(115, 46, 180, 0.12),
+        0 0 90px rgba(116, 44, 185, 0.12);
+    pointer-events: none;
+    animation: hollow-portal-breathe 6s ease-in-out infinite;
+}
+
+/* Tiêu đề phát sáng */
+body.hollow-active .hero h1 {
+    color: #f4eaff;
+    text-shadow:
+        0 0 12px rgba(190, 135, 255, 0.55),
+        0 0 38px rgba(133, 60, 208, 0.40);
+}
+
+/* Nút bấm */
+body.hollow-active .hero a,
+body.hollow-active .btn,
+body.hollow-active button {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+body.hollow-active .hero a:hover,
+body.hollow-active .btn:hover,
+body.hollow-active button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 24px rgba(163, 91, 240, 0.32);
+}
+
+/* Thẻ dự án */
+body.hollow-active .project-card,
+body.hollow-active .card {
+    border-color: rgba(171, 112, 235, 0.24);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.20);
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+body.hollow-active .project-card:hover,
+body.hollow-active .card:hover {
+    border-color: rgba(193, 143, 255, 0.65);
+    box-shadow: 0 0 28px rgba(120, 54, 183, 0.22);
+}
+
+/* Footer */
+body.hollow-active footer {
+    border-top: 1px solid rgba(183, 123, 255, 0.20);
+    background: rgba(5, 3, 10, 0.38);
+}
+
+/* Chuyển động nền */
+@keyframes hollow-atmosphere {
+    from { opacity: 0.65; }
+    to   { opacity: 1; }
+}
+
+@keyframes hollow-fog-drift {
+    from { transform: translate3d(-2%, 1%, 0) scale(1); }
+    to   { transform: translate3d(2%, -1%, 0) scale(1.08); }
+}
+
+@keyframes hollow-portal-breathe {
+    0%, 100% {
+        opacity: 0.55;
+        box-shadow:
+            0 0 25px rgba(143, 63, 220, 0.16),
+            inset 0 0 35px rgba(115, 46, 180, 0.12);
+    }
+    50% {
+        opacity: 1;
+        box-shadow:
+            0 0 45px rgba(143, 63, 220, 0.27),
+            inset 0 0 55px rgba(115, 46, 180, 0.20);
+    }
+}
+
+/* Ưu tiên giảm chuyển động nếu người dùng yêu cầu */
+@media (prefers-reduced-motion: reduce) {
+    body.hollow-active::before,
+    body.hollow-active::after,
+    body.hollow-active .hero::before {
+        animation: none !important;
+    }
+
+    body.hollow-active *,
+    body.hollow-active *::before,
+    body.hollow-active *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ==========================================
+   THE HOLLOW — FIXED FULL-PAGE ATMOSPHERE
+   ========================================== */
+
+/* Đưa hiệu ứng sương lên trên nền, nhưng dưới nội dung */
+body.hollow-active::before {
+    z-index: 0;
+    opacity: 1;
+}
+
+body.hollow-active::after {
+    z-index: 0;
+    opacity: 0.5;
+}
+
+/* Nền trang trí không che nội dung */
+body.hollow-active .background {
+    z-index: -1;
+    pointer-events: none;
+}
+
+body.hollow-active > *:not(.background) {
+    position: relative;
+    z-index: 1;
+}
+
+/* Hero toàn màn hình, tối ưu cho điện thoại */
+body.hollow-active .hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 90px 7% 55px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(110, 35, 175, 0.22),
+            transparent 58%
+        );
+}
+
+/* Cổng ma thuật lớn phía sau Hero */
+body.hollow-active .hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: min(85vw, 560px);
+    aspect-ratio: 0.82;
+    left: 50%;
+    top: 44%;
+    transform: translate(-50%, -50%);
+    border: 2px solid rgba(183, 115, 255, 0.5);
+    border-radius: 50% 50% 8% 8% / 35% 35% 8% 8%;
+    background:
+        radial-gradient(
+            ellipse at 50% 55%,
+            rgba(164, 75, 255, 0.3),
+            rgba(65, 20, 100, 0.12) 45%,
+            transparent 72%
+        );
+    box-shadow:
+        0 0 18px rgba(168, 85, 247, 0.45),
+        0 0 65px rgba(126, 34, 206, 0.3),
+        inset 0 0 40px rgba(168, 85, 247, 0.22);
+    pointer-events: none;
+    animation: hollow-portal-breathe 5s ease-in-out infinite;
+}
+
+/* Vòng năng lượng thứ hai */
+body.hollow-active .hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: min(72vw, 470px);
+    aspect-ratio: 0.82;
+    left: 50%;
+    top: 44%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(221, 190, 255, 0.3);
+    border-radius: 50% 50% 8% 8% / 35% 35% 8% 8%;
+    box-shadow:
+        inset 0 0 30px rgba(168, 85, 247, 0.18),
+        0 0 35px rgba(168, 85, 247, 0.18);
+    pointer-events: none;
+}
+
+/* Giữ nội dung Hero phía trước cổng */
+body.hollow-active .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Tiêu đề dễ đọc trên nền tối */
+body.hollow-active .hero h1 {
+    color: #fff;
+    text-shadow:
+        0 0 12px rgba(216, 180, 254, 0.8),
+        0 0 35px rgba(168, 85, 247, 0.6);
+}
+
+/* Căn vị trí nội dung gọn hơn trên điện thoại */
+@media (max-width: 700px) {
+    body.hollow-active .hero {
+        padding: 85px 7% 45px;
+    }
+
+    body.hollow-active .hero-content {
+        transform: translateY(-4vh);
+    }
+
+    body.hollow-active .hero::before {
+        width: 88vw;
+        top: 43%;
+    }
+
+    body.hollow-active .hero::after {
+        width: 74vw;
+        top: 43%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.hollow-active .hero::before {
+        animation: none;
+    }
+}
+
+/* HYCRIX title: event and normal states */
+
+body.hollow-active .hero h1 .home-title-line {
+    display: block;
+}
+
+body.hollow-active .hero h1 {
+    white-space: normal;
+    letter-spacing: -0.045em;
+}
+
+body.hollow-active .hero h1 #home-title-sub {
+    margin-top: 8px;
+    font-size: 0.76em;
+    letter-spacing: 0.025em;
+    background: linear-gradient(
+        90deg,
+        #f5eaff,
+        #d8b4fe,
+        #a855f7
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.65));
+}
+
+@media (max-width: 700px) {
+    body.hollow-active .hero h1 {
+        font-size: clamp(42px, 12vw, 76px);
+        line-height: 0.98;
+        letter-spacing: -0.045em;
+    }
+
+    body.hollow-active .hero h1 #home-title-sub {
+        font-size: 0.68em;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* ==========================================
+   THE HOLLOW — ARCANE PORTAL V2
+   ========================================== */
+
+body.hollow-active .hero {
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Vòm cổng ngoài */
+body.hollow-active .hero::before {
+    width: min(78vw, 460px);
+    aspect-ratio: 0.72;
+    top: 43%;
+    border: 2px solid rgba(194, 143, 255, 0.75);
+    border-radius: 50% 50% 7% 7% / 32% 32% 7% 7%;
+    background:
+        radial-gradient(
+            ellipse at 50% 58%,
+            rgba(210, 157, 255, 0.35) 0%,
+            rgba(139, 48, 226, 0.22) 23%,
+            rgba(53, 17, 86, 0.5) 55%,
+            rgba(9, 4, 17, 0.12) 75%
+        );
+    box-shadow:
+        0 0 8px rgba(202, 151, 255, 0.9),
+        0 0 25px rgba(168, 85, 247, 0.75),
+        0 0 70px rgba(126, 34, 206, 0.5),
+        inset 0 0 22px rgba(207, 163, 255, 0.5),
+        inset 0 0 65px rgba(126, 34, 206, 0.45);
+    animation: hollow-portal-v2 4s ease-in-out infinite;
+}
+
+/* Vòng năng lượng bên trong */
+body.hollow-active .hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    width: min(67vw, 390px);
+    aspect-ratio: 0.72;
+    left: 50%;
+    top: 43%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(229, 204, 255, 0.65);
+    border-radius: 50% 50% 7% 7% / 32% 32% 7% 7%;
+    box-shadow:
+        0 0 12px rgba(214, 173, 255, 0.7),
+        inset 0 0 20px rgba(177, 104, 255, 0.55);
+}
+
+/* Lõi năng lượng phát sáng phía sau chữ */
+body.hollow-active .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+body.hollow-active .hero-content::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 130%;
+    height: 140%;
+    left: -15%;
+    top: -20%;
+    pointer-events: none;
+    background: radial-gradient(
+        ellipse,
+        rgba(101, 30, 156, 0.26),
+        rgba(55, 18, 87, 0.12) 40%,
+        transparent 72%
+    );
+    filter: blur(18px);
+    animation: hollow-core-v2 3.5s ease-in-out infinite alternate;
+}
+
+/* Tăng độ nổi bật của tiêu đề */
+body.hollow-active .hero h1 {
+    position: relative;
+    text-shadow:
+        0 0 5px rgba(255, 255, 255, 0.8),
+        0 0 18px rgba(201, 147, 255, 0.85),
+        0 0 42px rgba(147, 51, 234, 0.65);
+}
+
+/* Ánh sáng tím phía dưới cổng */
+body.hollow-active .hero-content::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: min(90vw, 500px);
+    height: 55px;
+    left: 50%;
+    bottom: -100px;
+    transform: translateX(-50%);
+    pointer-events: none;
+    background: radial-gradient(
+        ellipse,
+        rgba(168, 85, 247, 0.42),
+        transparent 70%
+    );
+    filter: blur(12px);
+}
+
+/* Animation */
+@keyframes hollow-portal-v2 {
+    0%, 100% {
+        filter: brightness(0.88);
+        box-shadow:
+            0 0 8px rgba(202, 151, 255, 0.7),
+            0 0 25px rgba(168, 85, 247, 0.55),
+            0 0 70px rgba(126, 34, 206, 0.35),
+            inset 0 0 22px rgba(207, 163, 255, 0.4);
+    }
+
+    50% {
+        filter: brightness(1.25);
+        box-shadow:
+            0 0 12px rgba(230, 203, 255, 1),
+            0 0 35px rgba(168, 85, 247, 0.9),
+            0 0 95px rgba(126, 34, 206, 0.65),
+            inset 0 0 30px rgba(229, 204, 255, 0.75);
+    }
+}
+
+@keyframes hollow-core-v2 {
+    from {
+        opacity: 0.55;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.06);
+    }
+}
+
+/* Điện thoại */
+@media (max-width: 700px) {
+    body.hollow-active .hero::before {
+        width: 82vw;
+        top: 42%;
+    }
+
+    body.hollow-active .hero::after {
+        width: 70vw;
+        top: 42%;
+    }
+
+    body.hollow-active .hero-content::before {
+        width: 120%;
+        left: -10%;
+    }
+}
+
+/* Giảm chuyển động nếu người dùng bật tùy chọn này */
+@media (prefers-reduced-motion: reduce) {
+    body.hollow-active .hero::before,
+    body.hollow-active .hero-content::before {
+        animation: none;
+    }
+}
+
+/* ==========================================
+   THE HOLLOW — HAUNTED WORLD V3
+   Full-page moon, ruins and purple fog
+   ========================================== */
+
+/* Nền lâu đài xuyên suốt trang */
+body.hollow-active {
+    background:
+        radial-gradient(
+            circle at 83% 9%,
+            rgba(211, 181, 255, 0.12) 0 2px,
+            transparent 3px
+        ),
+        radial-gradient(
+            circle at 83% 9%,
+            rgba(182, 119, 255, 0.16) 0 35px,
+            rgba(111, 49, 163, 0.08) 36px 65px,
+            transparent 100px
+        ),
+        radial-gradient(
+            ellipse at 50% 38%,
+            rgba(91, 33, 182, 0.18),
+            transparent 52%
+        ),
+        linear-gradient(
+            180deg,
+            #080510 0%,
+            #10091b 35%,
+            #0b0712 68%,
+            #050309 100%
+        ) !important;
+    background-attachment: fixed !important;
+}
+
+/* Sương mù lan qua toàn bộ trang */
+body.hollow-active::before {
+    content: "";
+    position: fixed;
+    inset: -25%;
+    z-index: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(
+            ellipse at 15% 35%,
+            rgba(123, 49, 184, 0.16),
+            transparent 32%
+        ),
+        radial-gradient(
+            ellipse at 80% 55%,
+            rgba(89, 38, 145, 0.17),
+            transparent 36%
+        ),
+        radial-gradient(
+            ellipse at 45% 90%,
+            rgba(152, 78, 220, 0.11),
+            transparent 40%
+        );
+    filter: blur(28px);
+    animation: hollow-world-fog 22s ease-in-out infinite alternate;
+}
+
+/* Bóng lâu đài trang trí phía sau các section */
+body.hollow-active .hero,
+body.hollow-active .projects-section,
+body.hollow-active .about,
+body.hollow-active .contact-section {
+    position: relative;
+    isolation: isolate;
+}
+
+/* Tạo đường chân trời Gothic bằng CSS */
+body.hollow-active .hero::marker {
+    content: "";
+}
+
+body.hollow-active .projects-section::before,
+body.hollow-active .about::before,
+body.hollow-active .contact-section::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 180px;
+    pointer-events: none;
+    opacity: 0.5;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(6, 3, 12, 0.65),
+            transparent
+        );
+}
+
+/* Ánh trăng phản chiếu trên các khu vực */
+body.hollow-active .projects-section {
+    background:
+        radial-gradient(
+            ellipse at 90% 10%,
+            rgba(137, 73, 190, 0.09),
+            transparent 42%
+        );
+}
+
+body.hollow-active .about {
+    background:
+        radial-gradient(
+            ellipse at 15% 35%,
+            rgba(107, 42, 164, 0.10),
+            transparent 48%
+        );
+}
+
+body.hollow-active .contact-section {
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(117, 54, 171, 0.12),
+            transparent 55%
+        );
+}
+
+/* Thẻ dự án nổi lên giữa màn sương */
+body.hollow-active .project-card,
+body.hollow-active .contact-card {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* Footer tối dần như vực thẳm */
+body.hollow-active footer {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(20, 9, 31, 0.72),
+            #050309
+        );
+    border-top-color: rgba(183, 123, 255, 0.3);
+}
+
+/* Chuyển động sương */
+@keyframes hollow-world-fog {
+    0% {
+        transform: translate3d(-2%, 0, 0) scale(1);
+        opacity: 0.65;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate3d(2%, -1%, 0) scale(1.06);
+        opacity: 0.75;
+    }
+}
+
+/* Giảm tải hiệu ứng trên thiết bị yêu cầu giảm chuyển động */
+@media (prefers-reduced-motion: reduce) {
+    body.hollow-active::before {
+        animation: none !important;
+    }
+}
+
+/* ==========================================
+   HYCRIX: THE HOLLOW — CASTLE WALLPAPER
+   ========================================== */
+
+body.hollow-active {
+    background-color: #07040d !important;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(5, 3, 12, 0.22) 0%,
+            rgba(8, 4, 17, 0.42) 38%,
+            rgba(5, 3, 10, 0.78) 72%,
+            #050309 100%
+        ),
+        url("../assets/images/hollow-wallpaper.png") !important;
+
+    background-repeat: no-repeat, no-repeat !important;
+    background-position: center top, center top !important;
+    background-size: cover, cover !important;
+    background-attachment: fixed, fixed !important;
+}
+
+/* Không để nền gradient cũ che hình lâu đài */
+body.hollow-active .background {
+    background: transparent !important;
+}
+
+/* Giữ nội dung dễ đọc trên hình nền */
+body.hollow-active .hero {
+    background: transparent !important;
+}
+
+body.hollow-active .hero-content {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+}
+
+/* Các phần nội dung phía dưới vẫn có nền tối */
+body.hollow-active .projects-section,
+body.hollow-active .about,
+body.hollow-active .contact-section {
+    background-color: rgba(6, 3, 12, 0.35);
+}
+
+/* Navbar nổi trên hình nền */
+body.hollow-active .navbar {
+    background: rgba(7, 4, 14, 0.82) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Điện thoại: giữ hình lâu đài dễ nhìn */
+@media (max-width: 700px) {
+    body.hollow-active {
+        background-position: center top, 58% top !important;
+        background-size: cover, auto 100vh !important;
+        background-attachment: scroll, scroll !important;
+        background-repeat: no-repeat, no-repeat !important;
+    }
+}
+
+/* Remove the portal frame but keep the castle wallpaper */
+body.hollow-active .hero::before,
+body.hollow-active .hero::after {
+    content: none !important;
+    display: none !important;
+    animation: none !important;
+}
+
+/* Minecraft dropdown — mouse and touch support */
+.navbar {
+    z-index: 10000 !important;
+}
+
+.dropdown {
+    position: relative;
+    z-index: 10001;
+}
+
+.dropdown > .dropdown-menu {
+    display: none !important;
+    pointer-events: auto;
+    z-index: 10002 !important;
+}
+
+.dropdown:hover > .dropdown-menu,
+.dropdown:focus-within > .dropdown-menu,
+.dropdown.open > .dropdown-menu {
+    display: block !important;
+}
+
+.dropdown-menu a {
+    position: relative;
+    z-index: 1;
+    display: block !important;
+    pointer-events: auto !important;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* Make the Minecraft button easy to tap */
+.dropbtn {
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+
+
+

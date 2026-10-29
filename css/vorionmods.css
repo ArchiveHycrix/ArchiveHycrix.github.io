@@ -1183,3 +1183,123 @@ body {
         padding-top: 70px;
     }
 }
+
+/* VORION MODAL — MOBILE PERFORMANCE FIX */
+
+.version-modal {
+    z-index: 99999;
+    overscroll-behavior: contain;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.modal-backdrop {
+    background: rgba(0, 0, 0, 0.82) !important;
+
+    /* Tránh làm mờ toàn màn hình trên điện thoại */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+.version-modal-box {
+    max-height: 85vh;
+    max-height: 85dvh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    will-change: transform;
+}
+
+.modal-close {
+    touch-action: manipulation;
+}
+
+@media (max-width: 700px) {
+    .version-modal {
+        padding: 14px;
+    }
+
+    .version-modal-box {
+        padding: 26px 20px;
+        border-radius: 16px;
+        transform: none;
+    }
+
+    .version-modal.active .version-modal-box {
+        transform: none;
+    }
+
+    .version-modal,
+    .version-modal-box {
+        transition: none !important;
+    }
+}
+
+/* VORION MODS — CENTERED MODAL FIX */
+
+.version-modal {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 16px;
+    overflow-y: auto;
+    z-index: 99999 !important;
+    background: transparent;
+}
+
+.version-modal.active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-backdrop {
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(3, 2, 8, 0.82) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+.version-modal-box {
+    position: relative !important;
+    z-index: 1;
+    flex-shrink: 0;
+    width: min(500px, 100%);
+    max-height: calc(100dvh - 32px);
+    overflow-y: auto;
+    margin: auto;
+    background: #0b0911;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+body.modal-open {
+    overflow: hidden !important;
+    touch-action: none;
+}
+
+body.modal-open .version-modal-box {
+    touch-action: pan-y;
+}
+
+@media (max-width: 700px) {
+    .version-modal {
+        padding: 14px;
+    }
+
+    .version-modal-box {
+        width: 100%;
+        max-height: calc(100dvh - 28px);
+        padding: 26px 20px;
+        transform: none !important;
+    }
+
+    .version-modal.active .version-modal-box {
+        transform: none !important;
+    }
+}

@@ -1,30 +1,30 @@
-document.addEventListener("DOMContentLoaded", () => {
 
+"use strict";
+
+/* VORION MODS — VERSION POPUP */
+
+(() => {
     const statusData = {
         planned: {
             label: "PLANNED",
             icon: "◇",
             message: "More information will be available soon."
         },
-
         developing: {
             label: "DEVELOPING",
             icon: "⚙",
             message: "Development is currently in progress."
         },
-
         progress: {
             label: "50% DONE",
             icon: "◐",
             message: "Development is halfway complete."
         },
-
         "coming-soon": {
             label: "COMING SOON",
             icon: "◈",
             message: "The release is getting closer."
         },
-
         released: {
             label: "RELEASED",
             icon: "✓",
@@ -32,117 +32,90 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    function initialize() {
+        const modal = document.getElementById("versionModal");
+        const closeButton = document.getElementById("modalClose");
+        const backdrop = modal?.querySelector(".modal-backdrop");
 
-    const modal = document.getElementById("versionModal");
-    const modalClose = document.getElementById("modalClose");
+        const versionText = document.getElementById("modalVersion");
+        const statusText = document.getElementById("modalStatus");
+        const statusIcon = document.getElementById("modalStatusIcon");
+        const progressText = document.getElementById("modalProgressText");
+        const progressFill = document.getElementById("modalProgressFill");
+        const messageText = document.getElementById("modalMessage");
 
-    const modalVersion = document.getElementById("modalVersion");
-    const modalStatus = document.getElementById("modalStatus");
-    const modalStatusIcon = document.getElementById("modalStatusIcon");
-
-    const modalProgressText = document.getElementById("modalProgressText");
-    const modalProgressFill = document.getElementById("modalProgressFill");
-
-    const modalMessage = document.getElementById("modalMessage");
-
-    const releases = document.querySelectorAll(".release");
-
-
-    // Kiểm tra popup
-    if (!modal) {
-        console.error("Vorion Mods: versionModal not found.");
-        return;
-    }
-
-
-    // CLICK VERSION
-    releases.forEach((release) => {
-
-        release.addEventListener("click", () => {
-
-            const version =
-                release.getAttribute("data-version") ||
-                "Unknown Version";
-
-            const status =
-                release.getAttribute("data-status") ||
-                "planned";
-
-            const progress =
-                Number(
-                    release.getAttribute("data-progress") || 0
-                );
-
-            const data =
-                statusData[status] ||
-                statusData.planned;
-
-
-            modalVersion.textContent = version;
-
-            modalStatus.textContent = data.label;
-
-            modalStatusIcon.textContent = data.icon;
-
-            modalProgressText.textContent =
-                `${progress}%`;
-
-            modalProgressFill.style.width =
-                `${progress}%`;
-
-            modalMessage.textContent =
-                data.message;
-
-
-            // HIỆN POPUP
-            modal.classList.add("active");
-
-            document.body.style.overflow = "hidden";
-        });
-
-    });
-
-
-    // ĐÓNG POPUP
-    function closeModal() {
-
-        modal.classList.remove("active");
-
-        document.body.style.overflow = "";
-
-    }
-
-
-    // Nút X
-    if (modalClose) {
-        modalClose.addEventListener(
-            "click",
-            closeModal
-        );
-    }
-
-
-    // Click nền tối
-    const backdrop =
-        document.querySelector(".modal-backdrop");
-
-    if (backdrop) {
-
-        backdrop.addEventListener(
-            "click",
-            closeModal
-        );
-
-    }
-
-
-    // ESC
-    document.addEventListener("keydown", (event) => {
-
-        if (event.key === "Escape") {
-            closeModal();
+        if (
+            !modal || !closeButton || !backdrop ||
+            !versionText || !statusText || !statusIcon ||
+            !progressText || !progressFill || !messageText
+        ) {
+            console.error("Vorion popup: required HTML element is missing.");
+            return;
         }
 
-    });
+        let previousFocus = null;
 
-});
+        /**
+ * @param {HTMLButtonElement} release
+ */
+function openModal(release) {
+            const version = release.dataset.version || "Vorion release";
+            const status = release.dataset.status || "planned";
+
+            const rawProgress = Number(release.dataset.progress || 0);
+            const progress = Number.isFinite(rawProgress)
+                ? Math.max(0, Math.min(100, rawProgress))
+                : 0;
+
+            const data = statusData[status] || statusData.planned;
+
+            versionText.textContent = version;
+            statusText.textContent = data.label;
+            statusIcon.textContent = data.icon;
+            progressText.textContent = `${progress}%`;
+            progressFill.style.width = `${progress}%`;
+            messageText.textContent = data.message;
+
+            previousFocus = release;
+
+            modal.classList.add("active");
+            modal.setAttribute("aria-hidden", "false");
+
+            closeButton.focus({ preventScroll: true });
+        }
+
+        function closeModal() {
+            if (!modal.classList.contains("active")) return;
+
+            modal.classList.remove("active");
+            modal.setAttribute("aria-hidden", "true");
+
+            if (previousFocus?.isConnected) {
+                previousFocus.focus({ preventScroll: true });
+            }
+        }
+
+        document.querySelectorAll(".release").forEach((release) => {
+            release.addEventListener("click", () => {
+                openModal(release);
+            });
+        });
+
+        closeButton.addEventListener("click", closeModal);
+        backdrop.addEventListener("click", closeModal);
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initialize, {
+            once: true
+        });
+    } else {
+        initialize();
+    }
+})();
