@@ -539,3 +539,102 @@ body {
         font-size: 9px;
     }
 }
+
+/* ARCHIVEHYCRIX — RELEASE HISTORY */
+
+.release-history {
+    width: min(900px, 88%);
+    margin: 0 auto;
+    padding: 20px 0 120px;
+    display: grid;
+    gap: 22px;
+}
+
+.web-release {
+    padding: 28px;
+    border: 1px solid rgba(180, 130, 255, 0.17);
+    border-radius: 18px;
+    background: rgba(13, 9, 22, 0.72);
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.16);
+}
+
+.current-release {
+    border-color: rgba(183, 124, 255, 0.48);
+    box-shadow:
+        0 0 30px rgba(133, 60, 208, 0.12),
+        inset 0 0 24px rgba(133, 60, 208, 0.035);
+}
+
+.release-topline {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.release-version {
+    color: #d6b4ff;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.release-build {
+    color: rgba(255, 255, 255, 0.48);
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.release-status {
+    margin-left: auto;
+    padding: 6px 9px;
+    border: 1px solid rgba(183, 124, 255, 0.22);
+    border-radius: 100px;
+    color: #cba4ff;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.web-release h2 {
+    margin: 0;
+    color: #f4eaff;
+    font-size: clamp(24px, 4vw, 34px);
+    letter-spacing: -0.8px;
+}
+
+.release-subtitle {
+    margin: 10px 0 24px;
+    color: #b995e9;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.release-details {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding-left: 20px;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.release-details li::marker {
+    color: #b77cff;
+}
+
+@media (max-width: 600px) {
+    .release-history {
+        width: 90%;
+        padding-bottom: 80px;
+    }
+
+    .web-release {
+        padding: 21px 18px;
+        border-radius: 15px;
+    }
+
+    .release-status {
+        margin-left: 0;
+    }
+}

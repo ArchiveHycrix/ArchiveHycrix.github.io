@@ -1484,6 +1484,35 @@ body.hollow-active .hero::after {
     touch-action: manipulation;
 }
 
+/* HYCRIX — Website version label */
+
+.web-version {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 0.72;
+    position: relative;
+    z-index: 2;
+    margin: 12px 0 0;
+    padding: 0 12px;
+    color: #a99bbd;
+    font-family: inherit;
+    font-size: 11px;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+    text-align: center;
+}
+
+.web-version span {
+    display: inline;
+    padding: 0 5px;
+    color: #b78aff;
+}
+
+body.hollow-active .web-version {
+    color: #d0b9ed;
+    opacity: 0.9;
+}
+
 
 
 
